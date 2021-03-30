@@ -148,8 +148,22 @@
  	 key:name : ${hm.name}<br>
  	 key:pwd : ${hm.pwd}<br>
  	 key:date : ${hm.date}<br>
+ 	 <hr>
+ 	 <h2>기타 옵션</h2>
+ 	 <h3>JSTL 구분자 기준 처리</h3>
+ 	 <c:forTokens var="token" items="A.B/C-D" delims="./-">
+ 	 	${token}<br>
+ 	 </c:forTokens>
  	 
- 	 
+ 	 <%-- <c:set var="nownum" value="10"/>
+ 	 <c:forEach var="i" begin="0" end="${nownum}" step="1"> <!-- step: 증가폭 -->
+ 	 	${nownum + i}<br>
+ 	 </c:forEach> --%>
+ 	 <!-- forEach의 경우 step을 -1로 주는 것이 안된다 (역순불가) -->
+ 	 <c:set var="nownum" value="10"/>
+ 	 <c:forEach var="i" begin="0" end="${nownum}" step="1"> <!-- step: 증가폭 -->
+ 	 	${nownum - i}<br>
+ 	 </c:forEach>
 </body>
 </html>
 
